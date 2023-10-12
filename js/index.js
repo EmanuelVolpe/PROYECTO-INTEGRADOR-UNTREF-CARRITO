@@ -2,7 +2,7 @@
 async function traerDatos(miArchivo) {
     try {
         const respuesta = await fetch(miArchivo, {
-            method: "GET"
+            method: 'GET'
         });
         const datos = await respuesta.json();
         return datos;
@@ -50,7 +50,7 @@ const verDetalles = function (event) {
     //localStorage.setItem('idProductoSeleccionado', JSON.stringify(id));
     // Redirige a la página de detalles
     window.location.href = `./pages/details.html?producto=${id}`;
-}
+};
 
 traerDatos('./data/products.json')
     .then(data => {

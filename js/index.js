@@ -1,7 +1,9 @@
 /* Trae los datos desde el archivo JSON */
 async function traerDatos(miArchivo) {
     try {
-        const respuesta = await fetch(miArchivo);
+        const respuesta = await fetch(miArchivo, {
+            method: "GET"
+        });
         const datos = await respuesta.json();
         return datos;
     } catch (error) {
@@ -21,14 +23,14 @@ const mostrar = function (datos) {
 const template = function (id, producto, precio, imagen) {
     const item = generar('li', { className: 'producto' });
     item.setAttribute('data-id', id);
-    const name = generar('p', { innerHTML: producto });
+    const name = generar('p', { innerHTML: producto, className: 'name' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'precio' });
     const image = generar('img', {
         src: imagen,
         alt: `Imagen del producto ${producto}`
     });
-    const btnPlus = generar('button', { innerHTML: 'Agregar', onclick: addCart });
-    item.append(name, price, btnPlus, image);
+    const btnDetalles = generar('button', { innerHTML: 'Ver Detalles', onclick: verDetalles });
+    item.append(name, price, btnDetalles, image);
     return item;
 };
 
@@ -41,17 +43,23 @@ const generar = function (etiqueta, propiedades) {
     return elemento;
 };
 
-const addCart = function (e) {
-    e.preventDefault();
-    const item = e.target.parentElement;
+const verDetalles = function (event) {
+    event.preventDefault();
+    const item = event.target.parentElement;
     const id = parseInt(item.dataset.id);
-    console.log(id);
-};
+    //localStorage.setItem('idProductoSeleccionado', JSON.stringify(id));
+    // Redirige a la página de detalles
+    window.location.href = `./pages/details.html?producto=${id}`;
+}
 
 traerDatos('./data/products.json')
     .then(data => {
         mostrar(data); // Llama a mostrarEnHTML después de que los datos se hayan obtenido correctamente
+        console.log(data);
     })
     .catch(error => {
         console.error('Error al obtener y mostrar los datos JSON:', error);
     });
+
+
+console.log(JSON.parse(localStorage.getItem('carrito')));

@@ -4,76 +4,76 @@
         "producto":"Cable USB 3 metros",
         "precio": 5000,
         "imagen": "../images/conectores/cableUSB3metros.jpg",
-        "comentarios":"Cable USB de 3 metros es una opción conveniente para cargar y transferir datos entre dispositivos con mayor alcance. Sin embargo, no está relacionado con JSON, ya que JSON es un formato de datos utilizado para almacenar y transmitir información estructurada, mientras que un cable USB es un accesorio físico utilizado para la conectividad electrónica."
+        "descripcion":"Cable USB de 3 metros es una opción conveniente para cargar y transferir datos entre dispositivos con mayor alcance. Sin embargo, no está relacionado con JSON, ya que JSON es un formato de datos utilizado para almacenar y transmitir información estructurada, mientras que un cable USB es un accesorio físico utilizado para la conectividad electrónica."
     },
     {
         "id":2,
         "producto":"Cable USB 5 metros",
         "precio": 7000,
         "imagen": "../images/conectores/cableUSB5metros.jpg",
-        "comentarios":"Cable USB de 5 metros ofrece aún más flexibilidad en términos de alcance para conectar tus dispositivos. Esto puede ser especialmente útil en situaciones donde necesitas cargar o transferir datos a larga distancia. Asegúrate de que sea compatible con la velocidad y la potencia requeridas para tus dispositivos para una experiencia óptima."
+        "descripcion":"Cable USB de 5 metros ofrece aún más flexibilidad en términos de alcance para conectar tus dispositivos. Esto puede ser especialmente útil en situaciones donde necesitas cargar o transferir datos a larga distancia. Asegúrate de que sea compatible con la velocidad y la potencia requeridas para tus dispositivos para una experiencia óptima."
     },
     {
         "id":3,
         "producto":"Disco Solido SSD Kingston 240GB",
         "precio": 16000,
         "imagen": "../images/discos/solido_SSD_Kingston_240GB_A400_500MB_s_c9de3151-med.jpg",
-        "comentarios":"Kingston de 240GB es una excelente elección para mejorar el rendimiento y la velocidad de tu computadora. Con 240GB de almacenamiento, tendrás espacio suficiente para tus aplicaciones y archivos esenciales. Los discos SSD son conocidos por su velocidad de lectura y escritura, lo que resulta en un aumento significativo en la velocidad de arranque y la capacidad de respuesta de tu sistema. Además, la confiable marca Kingston garantiza una calidad probada en el tiempo para tu almacenamiento de datos."
+        "descripcion":"Kingston de 240GB es una excelente elección para mejorar el rendimiento y la velocidad de tu computadora. Con 240GB de almacenamiento, tendrás espacio suficiente para tus aplicaciones y archivos esenciales. Los discos SSD son conocidos por su velocidad de lectura y escritura, lo que resulta en un aumento significativo en la velocidad de arranque y la capacidad de respuesta de tu sistema. Además, la confiable marca Kingston garantiza una calidad probada en el tiempo para tu almacenamiento de datos."
     },
     {
         "id":4,
         "producto":"Disco Solido SSD M. ADATA 1TB",
         "precio": 69000,
         "imagen": "../images/discos/solido_SSD_M.2_ADATA_1TB_XPG_Spectrix_S40G_RGB_3500MB_s_NVMe_PCI-E_X4_7622f5c4-med.jpg",
-        "comentarios":"SSD M.2 ADATA de 1TB ofrece una gran capacidad de almacenamiento en un formato compacto y de alto rendimiento. Con 1TB de espacio, tendrás espacio de sobra para tus aplicaciones, juegos y archivos multimedia. Los discos SSD M.2 son conocidos por su velocidad y eficiencia energética, lo que proporciona un rendimiento rápido y una mayor duración de la batería en laptops. ADATA es una marca confiable en el mundo de los dispositivos de almacenamiento, lo que garantiza una sólida inversión en cuanto a velocidad y capacidad de almacenamiento."
+        "descripcion":"SSD M.2 ADATA de 1TB ofrece una gran capacidad de almacenamiento en un formato compacto y de alto rendimiento. Con 1TB de espacio, tendrás espacio de sobra para tus aplicaciones, juegos y archivos multimedia. Los discos SSD M.2 son conocidos por su velocidad y eficiencia energética, lo que proporciona un rendimiento rápido y una mayor duración de la batería en laptops. ADATA es una marca confiable en el mundo de los dispositivos de almacenamiento, lo que garantiza una sólida inversión en cuanto a velocidad y capacidad de almacenamiento."
     },
     {
         "id":5,
         "producto":"Disco Solido SSD WD GREEN SATA",
         "precio": 22000,
         "imagen": "../images/discos/solido_SSD_WD_480GB_GREEN_545MB_s_SATA_401cd02f-grn.jpg",
-        "comentarios":"Disco sólido SSD WD Green SATA es una opción económica y confiable para aquellos que buscan mejorar el rendimiento de su computadora o laptop. Aunque no es el SSD más rápido disponible en el mercado, ofrece una mejora significativa en comparación con los discos duros tradicionales. Está diseñado para ser eficiente en términos de energía y ayuda a acelerar el tiempo de arranque del sistema y la velocidad de lectura/escritura de datos. Es una elección sólida para aquellos que buscan una actualización de almacenamiento sin gastar demasiado dinero."
+        "descripcion":"Disco sólido SSD WD Green SATA es una opción económica y confiable para aquellos que buscan mejorar el rendimiento de su computadora o laptop. Aunque no es el SSD más rápido disponible en el mercado, ofrece una mejora significativa en comparación con los discos duros tradicionales. Está diseñado para ser eficiente en términos de energía y ayuda a acelerar el tiempo de arranque del sistema y la velocidad de lectura/escritura de datos. Es una elección sólida para aquellos que buscan una actualización de almacenamiento sin gastar demasiado dinero."
     },
     {
         "id":6,
         "producto":"Fuente BE QUIET 1000W",
         "precio": 60000,
         "imagen": "../images/fuentes/compragamer_Imganen_general_34993_Fuente_Be_Quiet_1000W_80_Plus_Gold_PURE_POWER_11_Full_Modular_3d25f718-grn.jpg",
-        "comentarios":"La fuente de alimentación BE QUIET de 1000W es una opción potente y eficiente para sistemas de alto rendimiento, como computadoras de juegos y estaciones de trabajo intensivas. Con una capacidad de 1000 vatios, es capaz de alimentar múltiples componentes, incluyendo procesadores potentes y tarjetas gráficas de alto rendimiento, sin problemas."
+        "descripcion":"La fuente de alimentación BE QUIET de 1000W es una opción potente y eficiente para sistemas de alto rendimiento, como computadoras de juegos y estaciones de trabajo intensivas. Con una capacidad de 1000 vatios, es capaz de alimentar múltiples componentes, incluyendo procesadores potentes y tarjetas gráficas de alto rendimiento, sin problemas."
     },
     {
         "id":7,
         "producto":"Fuente GAMEMAX GM 800W",
         "precio": 40000,
         "imagen": "../images/fuentes/fuente800W.jpg",
-        "comentarios":"La fuente de alimentación GAMEMAX GM 800W es una opción sólida para sistemas de alto rendimiento, especialmente diseñada para juegos y tareas intensivas. Con 800 vatios de potencia, es capaz de satisfacer las demandas de componentes potentes, y su eficiencia energética asegura un uso más económico. Asegúrate de que tenga la conectividad adecuada y verifica las opiniones de otros usuarios para garantizar su confiabilidad en tu configuración. En general, una opción valiosa en términos de potencia y rendimiento."
+        "descripcion":"La fuente de alimentación GAMEMAX GM 800W es una opción sólida para sistemas de alto rendimiento, especialmente diseñada para juegos y tareas intensivas. Con 800 vatios de potencia, es capaz de satisfacer las demandas de componentes potentes, y su eficiencia energética asegura un uso más económico. Asegúrate de que tenga la conectividad adecuada y verifica las opiniones de otros usuarios para garantizar su confiabilidad en tu configuración. En general, una opción valiosa en términos de potencia y rendimiento."
     },
     {
         "id":8,
         "producto":"Gabinete Antec NX292",
         "precio": 50000,
         "imagen": "../images/gabinetes/Gabinete_Antec.jpg",
-        "comentarios":"El gabinete Antec NX292 ofrece una solución espaciosa y versátil para tu construcción de PC. Con su diseño moderno y amplio espacio interior, este gabinete proporciona una excelente capacidad de expansión y flujo de aire para mantener tus componentes frescos. Además, su panel lateral de vidrio templado permite exhibir tus componentes internos con estilo. Asegúrate de verificar la compatibilidad con tus componentes y disfruta de un gabinete que combina estética y funcionalidad en tu configuración."
+        "descripcion":"El gabinete Antec NX292 ofrece una solución espaciosa y versátil para tu construcción de PC. Con su diseño moderno y amplio espacio interior, este gabinete proporciona una excelente capacidad de expansión y flujo de aire para mantener tus componentes frescos. Además, su panel lateral de vidrio templado permite exhibir tus componentes internos con estilo. Asegúrate de verificar la compatibilidad con tus componentes y disfruta de un gabinete que combina estética y funcionalidad en tu configuración."
     },
     {
         "id":9,
         "producto":"Gabinete BE QUIET SILENT 802",
         "precio": 30000,
         "imagen": "../images/gabinetes/gabinetepc.jpg",
-        "comentarios":"El gabinete BE QUIET SILENT 802 combina elegancia y funcionalidad en un diseño excepcionalmente silencioso. Con un aislamiento acústico de alta calidad y opciones para un flujo de aire óptimo, este gabinete se destaca en la reducción de ruido. Su espacio interior espacioso y modularidad lo hacen ideal para construcciones personalizadas. Si valoras un ambiente de trabajo o juego tranquilo sin comprometer el rendimiento, el BE QUIET SILENT 802 es una elección excepcional que equilibra la estética y el silencio."
+        "descripcion":"El gabinete BE QUIET SILENT 802 combina elegancia y funcionalidad en un diseño excepcionalmente silencioso. Con un aislamiento acústico de alta calidad y opciones para un flujo de aire óptimo, este gabinete se destaca en la reducción de ruido. Su espacio interior espacioso y modularidad lo hacen ideal para construcciones personalizadas. Si valoras un ambiente de trabajo o juego tranquilo sin comprometer el rendimiento, el BE QUIET SILENT 802 es una elección excepcional que equilibra la estética y el silencio."
     },
     {
         "id":10,
         "producto":"Monitor Gamer SAMSUNG 24 G50",
         "precio": 130000,
         "imagen": "../images/monitores/Monitor_Gamer_Samsung_24__G50_Curvo.jpg",
-        "comentarios":"El monitor gamer Samsung 24 G50 es una opción excelente para los entusiastas de los videojuegos. Con su pantalla de 24 pulgadas y una alta tasa de actualización, ofrece una experiencia de juego suave y envolvente. La tecnología de panel de alta calidad proporciona colores vivos y contrastes nítidos para una inmersión visual impresionante. Además, su diseño elegante y ergonómico permite ajustar la posición y el ángulo para una comodidad óptima durante largas sesiones de juego. En resumen, el monitor Samsung 24 G50 es una elección sólida para los jugadores que buscan rendimiento y calidad visual."
+        "descripcion":"El monitor gamer Samsung 24 G50 es una opción excelente para los entusiastas de los videojuegos. Con su pantalla de 24 pulgadas y una alta tasa de actualización, ofrece una experiencia de juego suave y envolvente. La tecnología de panel de alta calidad proporciona colores vivos y contrastes nítidos para una inmersión visual impresionante. Además, su diseño elegante y ergonómico permite ajustar la posición y el ángulo para una comodidad óptima durante largas sesiones de juego. En resumen, el monitor Samsung 24 G50 es una elección sólida para los jugadores que buscan rendimiento y calidad visual."
     },
     {
         "id":11,
         "producto":"Monitor Curvo SAMSUNG 24 F390",
         "precio": 130000,
         "imagen": "../images/monitores/Monitor_Samsung_24Curvo_F390.jpg",
-        "comentarios":"El monitor curvo Samsung 24 F390 ofrece una experiencia de visualización envolvente y cómoda. Su diseño curvo crea un campo de visión más amplio y reduce la distorsión en los bordes, lo que lo hace ideal para juegos y contenido multimedia. Con una pantalla de 24 pulgadas, proporciona imágenes nítidas y colores vibrantes. Además, su diseño elegante y delgado complementa cualquier espacio de trabajo o entretenimiento. Si buscas un monitor que te sumerja en tus juegos y películas favoritas, el Samsung 24 F390 es una elección excelente que combina estilo y funcionalidad curva."
+        "descripcion":"El monitor curvo Samsung 24 F390 ofrece una experiencia de visualización envolvente y cómoda. Su diseño curvo crea un campo de visión más amplio y reduce la distorsión en los bordes, lo que lo hace ideal para juegos y contenido multimedia. Con una pantalla de 24 pulgadas, proporciona imágenes nítidas y colores vibrantes. Además, su diseño elegante y delgado complementa cualquier espacio de trabajo o entretenimiento. Si buscas un monitor que te sumerja en tus juegos y películas favoritas, el Samsung 24 F390 es una elección excelente que combina estilo y funcionalidad curva."
     }
 ]

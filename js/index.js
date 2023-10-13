@@ -13,25 +13,25 @@ async function traerDatos(miArchivo) {
 
 /* Agrega cada elemento li a la ul del DOM */
 const mostrar = function (datos) {
-    const lista = document.querySelector('#lista');
+    const main = document.querySelector('#main');
     datos.forEach(({ id, producto, precio, imagen }) => {
-        const itemList = template(id, producto, precio, imagen);
-        lista.appendChild(itemList);
+        const card = template(id, producto, precio, imagen);
+        main.appendChild(card);
     });
 };
 
 const template = function (id, producto, precio, imagen) {
-    const item = generar('li', { className: 'producto' });
-    item.setAttribute('data-id', id);
-    const name = generar('p', { innerHTML: producto, className: 'name' });
-    const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'precio' });
+    const card = generar('div', { className: 'card' });
+    card.setAttribute('data-id', id);
     const image = generar('img', {
         src: imagen,
         alt: `Imagen del producto ${producto}`
     });
+    const name = generar('h2', { innerHTML: producto, className: 'name' });
+    const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
     const btnDetalles = generar('button', { innerHTML: 'Ver Detalles', onclick: verDetalles });
-    item.append(name, price, btnDetalles, image);
-    return item;
+    card.append(name, image, price, btnDetalles);
+    return card;
 };
 
 /* Genera dinamicamente un tipo de elemento HTML en funcion de la etiqueta y las propiedades */

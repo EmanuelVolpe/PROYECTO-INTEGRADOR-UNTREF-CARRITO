@@ -1,5 +1,20 @@
 /* Mobile */
 
+#main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    /*height: 250px;*/
+    object-fit: cover;
+}
+
 /* Tablet 1280px */
 @media only screen and (min-width: 1280px) {}
 

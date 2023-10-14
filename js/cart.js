@@ -20,7 +20,7 @@ const template = function (id, producto, precio, imagen) {
     });
     const name = generar('h2', { innerHTML: producto, className: 'name' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
-    card.append(name, image, price);
+    card.append(image, name, price);
     return card;
 };
 

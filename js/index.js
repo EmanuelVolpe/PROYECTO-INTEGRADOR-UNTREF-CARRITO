@@ -27,10 +27,11 @@ const template = function (id, producto, precio, imagen) {
         src: imagen,
         alt: `Imagen del producto ${producto}`
     });
-    const name = generar('h2', { innerHTML: producto, className: 'name' });
+    const name = generar('h4', { innerHTML: producto, className: 'name' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
-    const btnDetalles = generar('button', { innerHTML: 'Ver Detalles', onclick: verDetalles });
-    card.append(name, image, price, btnDetalles);
+    const btnDetalles = generar('button', { innerHTML: 'Detalles', onclick: verDetalles });
+    const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar', onclick: comprar });
+    card.append(image, name, price, btnDetalles, btnAgregarAlCarrito);
     return card;
 };
 
@@ -43,12 +44,17 @@ const generar = function (etiqueta, propiedades) {
     return elemento;
 };
 
-const verDetalles = function (event) {
+const verDetalles = (event) => {
     event.preventDefault();
     const item = event.target.parentElement;
     const id = parseInt(item.dataset.id);
-    //localStorage.setItem('idProductoSeleccionado', JSON.stringify(id));
-    // Redirige a la página de detalles
+    window.location.href = `./pages/details.html?producto=${id}`;
+};
+
+const comprar = (event) => {
+    event.preventDefault();
+    const item = event.target.parentElement;
+    const id = parseInt(item.dataset.id);
     window.location.href = `./pages/details.html?producto=${id}`;
 };
 

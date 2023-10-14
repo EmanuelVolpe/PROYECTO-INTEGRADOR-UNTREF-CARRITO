@@ -1,18 +1,6 @@
 const idProductoSeleccionado = parseInt(location.search.split('=', 2)[1]);
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-/* Botón para volver al Index */
-const volver = function (event) {
-    event.preventDefault();
-    window.location.href = '../index.html';
-};
-
-/* Botón para ir al Carrito */
-const verCarrito = function (event) {
-    event.preventDefault();
-    window.location.href = './cart.html';
-};
-
 async function traerDatos(miArchivo) {
     try {
         const respuesta = await fetch(miArchivo, {
@@ -61,33 +49,11 @@ const template = (id, producto, descripcion, precio, imagen) => {
     const name = generar('h2', { innerHTML: producto, className: 'name' });
     const description = generar('p', { innerHTML: descripcion, className: 'descripcion' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
-    const btnAgregarAlCarrito = generar('button', {
-        innerHTML: 'Agregar al Carrito',
-        className: 'btnAgregarCarrito'
-    });
-    card.append(name, description, price, image, btnAgregarAlCarrito);
+    const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar' });
+    card.append(image, name, description, price, btnAgregarAlCarrito);
     return card;
 };
 
-try {
-    const btnVolver = generar('button', { innerHTML: 'Volver', onclick: volver });
-    const btnVerCarrito = generar('button', { innerHTML: 'Ver Carrito', onclick: verCarrito });
-    const botonera = document.querySelector('#botonera');
-    botonera.append(btnVolver, btnVerCarrito);
-} catch (error) {
-    console.log(error);
-}
-
-
-traerDatos('../data/products.json')
-    .then(data => {
-        const producto = productoBuscado(data, idProductoSeleccionado);
-        mostrar(producto.id, producto.producto, producto.descripcion, producto.precio, producto.imagen);
-        crearBotonAgregar(data, idProductoSeleccionado);
-    })
-    .catch(error => {
-        console.error('Error al obtener y mostrar los datos JSON:', error);
-    });
 
 /*Agrega el producto al arreglo Carrito*/
 const agregarAlCarrito = (event, producto) => {
@@ -100,7 +66,7 @@ const agregarAlCarrito = (event, producto) => {
 };
 
 function crearBotonAgregar(datos, idBuscado) {
-    const btnAgregarCarrito = document.querySelector('.btnAgregarCarrito');
+    const btnAgregarCarrito = document.querySelector('button');
     btnAgregarCarrito.addEventListener('click', async function (event) {
         const producto = datos.find(producto => producto.id === idBuscado);
         console.log(producto);
@@ -110,6 +76,15 @@ function crearBotonAgregar(datos, idBuscado) {
     });
 }
 
+traerDatos('../data/products.json')
+    .then(data => {
+        const producto = productoBuscado(data, idProductoSeleccionado);
+        mostrar(producto.id, producto.producto, producto.descripcion, producto.precio, producto.imagen);
+        crearBotonAgregar(data, idProductoSeleccionado);
+    })
+    .catch(error => {
+        console.error('Error al obtener y mostrar los datos JSON:', error);
+    });
 
 console.log(JSON.parse(localStorage.getItem('carrito')));
 console.log('Array Carrito:' + carrito.length);

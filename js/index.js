@@ -27,7 +27,7 @@ const template = function (id, producto, precio, imagen) {
         src: imagen,
         alt: `Imagen del producto ${producto}`
     });
-    const name = generar('h4', { innerHTML: producto, className: 'name' });
+    const name = generar('h3', { innerHTML: producto, className: 'name' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
     const btnDetalles = generar('button', { innerHTML: 'Detalles', onclick: verDetalles });
     const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar', onclick: comprar });

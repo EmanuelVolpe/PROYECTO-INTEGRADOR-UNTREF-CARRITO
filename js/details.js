@@ -46,7 +46,7 @@ const template = (id, producto, descripcion, precio, imagen) => {
         src: imagen,
         alt: `Imagen del producto ${producto}`
     });
-    const name = generar('h2', { innerHTML: producto, className: 'name' });
+    const name = generar('h3', { innerHTML: producto, className: 'name' });
     const description = generar('p', { innerHTML: descripcion, className: 'descripcion' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
     const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar' });
@@ -61,26 +61,22 @@ const agregarAlCarrito = (event, producto) => {
     carrito.push(producto);
     localStorage.setItem('carrito', JSON.stringify(carrito));
     console.log(JSON.parse(localStorage.getItem('carrito')));
-    //console.log(carrito);
-    //const productoAgregado = carrito.find((producto) => producto.id === idProductoSeleccionado);
 };
 
-function crearBotonAgregar(datos, idBuscado) {
+function crearBotonAgregar(producto) {
     const btnAgregarCarrito = document.querySelector('button');
     btnAgregarCarrito.addEventListener('click', async function (event) {
-        const producto = datos.find(producto => producto.id === idBuscado);
-        console.log(producto);
-        if (producto) {
-            agregarAlCarrito(event, producto);
-        }
+        agregarAlCarrito(event, producto);
     });
 }
 
 traerDatos('../data/products.json')
     .then(data => {
-        const producto = productoBuscado(data, idProductoSeleccionado);
-        mostrar(producto.id, producto.producto, producto.descripcion, producto.precio, producto.imagen);
-        crearBotonAgregar(data, idProductoSeleccionado);
+        const product = productoBuscado(data, idProductoSeleccionado);
+        console.log(product);
+        const { id, producto, precio, imagen, descripcion } = product;
+        mostrar(id, producto, descripcion, precio, imagen, descripcion);
+        crearBotonAgregar(product);
     })
     .catch(error => {
         console.error('Error al obtener y mostrar los datos JSON:', error);

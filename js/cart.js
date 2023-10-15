@@ -1,7 +1,6 @@
 import { generar } from './details.js';
 
 let carritoParseado = JSON.parse(localStorage.getItem('carrito'));
-//console.log(carritoParseado);
 
 const mostrar = function (data) {
     const main = document.querySelector('#main');
@@ -22,14 +21,17 @@ const template = function (id, producto, precio, imagen) {
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
     const quantity = generar('input', {
         name: `cantidad-${id}`,
+        value: '1',
+        min: '1',
+        className: 'input-cantidad',
         onchange: function (event) {
             const subtotal = calcularSubtotal(event, precio);
             actualizarSubtotal(card, subtotal);
         }
     });
     quantity.type = 'number';
-    const $st = parseInt(quantity.value) * precio;
-    const subtotal = generar('h4', { innerHTML: $st });
+    const subt = parseInt(quantity.value) * parseInt(precio);
+    const subtotal = generar('h4', { innerHTML: `Subtotal: $ ${subt.toFixed(2)}` });
     card.append(image, name, price, quantity, subtotal);
     return card;
 };

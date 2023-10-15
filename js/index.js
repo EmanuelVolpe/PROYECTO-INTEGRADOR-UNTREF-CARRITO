@@ -30,8 +30,8 @@ const template = function (id, producto, precio, imagen) {
     const name = generar('h3', { innerHTML: producto, className: 'name' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
     const btnDetalles = generar('button', { innerHTML: 'Detalles', onclick: verDetalles });
-    const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar', onclick: comprar });
-    card.append(image, name, price, btnDetalles, btnAgregarAlCarrito);
+    //const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar', onclick: comprar });
+    card.append(image, name, price, btnDetalles/*, btnAgregarAlCarrito*/);
     return card;
 };
 
@@ -51,12 +51,12 @@ const verDetalles = (event) => {
     window.location.href = `./pages/details.html?producto=${id}`;
 };
 
-const comprar = (event) => {
+/* const comprar = (event) => {
     event.preventDefault();
     const item = event.target.parentElement;
     const id = parseInt(item.dataset.id);
     window.location.href = `./pages/details.html?producto=${id}`;
-};
+}; */
 
 traerDatos('./data/products.json')
     .then(data => {

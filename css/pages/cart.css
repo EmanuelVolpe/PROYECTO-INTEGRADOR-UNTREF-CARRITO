@@ -15,6 +15,14 @@ img {
     object-fit: cover;
 }
 
+.input-cantidad {
+    font-size: 16px;
+    width: 60px;
+    height: 25px;
+    margin-bottom: 15px;
+    text-align: end;
+}
+
 /* Tablet 1280px */
 @media only screen and (min-width: 1280px) {}
 

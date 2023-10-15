@@ -49,8 +49,8 @@ const template = (id, producto, descripcion, precio, imagen) => {
     const name = generar('h3', { innerHTML: producto, className: 'name' });
     const description = generar('p', { innerHTML: descripcion, className: 'descripcion' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
-    const btnAgregarAlCarrito = generar('button', { innerHTML: 'Comprar' });
-    card.append(image, name, description, price, btnAgregarAlCarrito);
+    const btnComprar = generar('button', { innerHTML: 'Comprar' });
+    card.append(image, name, description, price, btnComprar);
     return card;
 };
 
@@ -58,8 +58,24 @@ const template = (id, producto, descripcion, precio, imagen) => {
 /*Agrega el producto al arreglo Carrito*/
 const agregarAlCarrito = (event, producto) => {
     event.preventDefault();
-    carrito.push(producto);
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    const yaExiste = carrito.some(element => {
+        return element.id === producto.id;
+    });
+    if (!yaExiste) {
+        carrito.push(producto);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        Swal.fire({
+            icon: 'success',
+            title: 'Genial!!!',
+            text: 'Producto agregado al Carrito con éxito'
+        });
+    } else {
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'El producto ya se encuentra en el Carrito'
+        });
+    }
     console.log(JSON.parse(localStorage.getItem('carrito')));
 };
 
@@ -73,7 +89,6 @@ function crearBotonAgregar(producto) {
 traerDatos('../data/products.json')
     .then(data => {
         const product = productoBuscado(data, idProductoSeleccionado);
-        console.log(product);
         const { id, producto, precio, imagen, descripcion } = product;
         mostrar(id, producto, descripcion, precio, imagen, descripcion);
         crearBotonAgregar(product);

@@ -1,3 +1,4 @@
 # Ignorar la carpeta node_modules y su contenido
 node_modules/
+# Ignorar la configuracion de eslint
 .eslintrc.json

@@ -32,7 +32,8 @@ const template = function (id, producto, precio, imagen) {
     quantity.type = 'number';
     const subt = parseInt(quantity.value) * parseInt(precio);
     const subtotal = generar('h4', { innerHTML: `Subtotal: $ ${subt.toFixed(2)}` });
-    card.append(image, name, price, quantity, subtotal);
+    const trash = generar('button', { innerHTML: 'delete', className: 'material-symbols-outlined', onclick: (event) => quitar(event, id) });
+    card.append(image, name, price, quantity, subtotal, trash);
     return card;
 };
 
@@ -47,6 +48,35 @@ const calcularSubtotal = (event, precio) => {
 const actualizarSubtotal = (card, nuevoSubtotal) => {
     const subtotal = card.querySelector('h4');
     subtotal.innerHTML = `Subtotal: $ ${nuevoSubtotal.toFixed(2)}`;
+};
+
+const quitar = (event, id) => {
+    event.preventDefault();
+    const productoAQuitar = carritoParseado.find(element => {
+        return element.id === id;
+    });
+    console.log(productoAQuitar);
+    console.log(carritoParseado.indexOf(productoAQuitar));
+    const indiceProductoAQuitar = carritoParseado.indexOf(productoAQuitar);
+    carritoParseado.splice(indiceProductoAQuitar, 1);
+    localStorage.setItem('carrito', JSON.stringify(carritoParseado));
+    window.location.href = './cart.html';
+    /*if (!yaExiste) {
+        carritoParseado.push(producto);
+        localStorage.setItem('carrito', JSON.stringify(carritoParseado));
+        Swal.fire({
+            icon: 'success',
+            title: 'Genial!!!',
+            text: 'Producto eliminado del Carrito con éxito'
+        });
+    } else {
+        Swal.fire({
+            icon: 'info',
+            title: 'Oops...',
+            text: 'El producto ya se encuentra en el Carrito'
+        });
+    }*/
+    //console.log(JSON.parse(localStorage.getItem('carrito')));
 };
 
 

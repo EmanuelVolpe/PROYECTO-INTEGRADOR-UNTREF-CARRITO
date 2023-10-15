@@ -60,7 +60,7 @@ const verDetalles = (event) => {
 
 traerDatos('./data/products.json')
     .then(data => {
-        mostrar(data); // Llama a mostrarEnHTML después de que los datos se hayan obtenido correctamente
+        mostrar(data);
         console.log(data);
     })
     .catch(error => {

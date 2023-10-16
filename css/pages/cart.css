@@ -9,6 +9,28 @@
     justify-content: center;
 }
 
+.card-resumen {
+    margin-top: 15px;
+    background-color: rgb(202, 202, 202);
+    padding-bottom: 15px;
+    padding-top: 0px;
+    padding: 0;
+}
+
+.card-resumen h3 {
+    text-align: left;
+    margin: 0 20px 10px 20px;
+}
+
+.card-resumen .titulo {
+    margin: 0 0 10px 0;
+    padding: 5px;
+    background-color: rgb(10, 187, 143);
+    color: white;
+    font-size: 22px;
+    text-align: center;
+}
+
 img {
     width: 200px;
     /*height: 250px;*/
@@ -21,6 +43,20 @@ img {
     height: 25px;
     margin-bottom: 15px;
     text-align: end;
+}
+
+.card .btn-compra {
+    background-color: rgb(10, 187, 143);
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.card .btn-compra:hover {
+    color: rgb(252, 64, 158);
+}
+
+h3 span {
+    color: rgb(252, 64, 158);
 }
 
 /* Tablet 1280px */

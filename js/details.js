@@ -97,7 +97,4 @@ traerDatos('../data/products.json')
         console.error('Error al obtener y mostrar los datos JSON:', error);
     });
 
-console.log(JSON.parse(localStorage.getItem('carrito')));
-console.log('Array Carrito:' + carrito.length);
-
 export { generar };

@@ -18,18 +18,24 @@
     <header>
         <nav>
             <ul>
-                <li><a href="../index.html"><span class="material-symbols-outlined">
-                            home
-                        </span></a></li>
+                <li>
+                    <a href="../index.html"><span class="material-symbols-outlined">home</span></a>
+                </li>
             </ul>
         </nav>
     </header>
+
+    <!--Acá se presentan las tarjetas de los productos del carrito-->
     <main id="main">
     </main>
-    <section id="resumen">
-        <h2>Cantidad de Productos:<span id="cantProductos"></span></h2>
-        <h2>Costo Total:<span id="costoTotal"></span></h2>
-    </section>
+
+    <!--Card con el resumen de la compra-->
+    <div class="card card-resumen">
+        <h3 class="titulo">Resumen de Compra</h3>
+        <h3>Productos: <span id="cantProductos"></span></h3>
+        <h3>Costo Total: $ <span id="costoTotal"></span></h3>
+        <button class="btn-compra">Finalizar Compra</button>
+    </div>
 
     <button id="btnAProductos">Ver Productos</button>
 </body>

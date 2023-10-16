@@ -85,22 +85,19 @@ const actualizarCostoTotal = () => {
         const h4texto = card.childNodes[4].textContent;
         const partes = h4texto.split(' ');
         subtotales.push(parseInt(partes[2]));
-        return subtotales;
     });
     const total = calcularSuma(subtotales);
-    costoTotal.innerHTML = total;
+    costoTotal.innerHTML = total.toFixed(2);
 };
 
 const actualizarCantidadProductos = () => {
     const cantDeProductos = document.querySelector('#cantProductos');
     const contenedorMain = document.querySelector('#main');
     const cards = contenedorMain.querySelectorAll('.card');
-    console.log(cards);
     const cantidades = [];
     cards.forEach(card => {
         const inputsCant = card.childNodes[3].value;
         cantidades.push(parseInt(inputsCant));
-        return cantidades;
     });
     const cantTotal = calcularSuma(cantidades);
     cantDeProductos.innerHTML = cantTotal;

@@ -36,7 +36,7 @@ const template = (id, producto, precio, imagen) => {
     const subtotal = generar('h4', { innerHTML: `Subtotal: $ ${subt.toFixed(2)}` });
     const trash = generar('button', {
         innerHTML: 'delete',
-        className: 'material-symbols-outlined',
+        className: 'material-symbols-outlined btn-delete',
         onclick: (event) => quitar(event, id)
     });
     card.append(image, name, price, quantity, subtotal, trash);
@@ -103,11 +103,11 @@ const actualizarCantidadProductos = () => {
     cantDeProductos.innerHTML = cantTotal;
 };
 
-const btnInicio = document.querySelector('#btnAProductos');
+/* const btnInicio = document.querySelector('#btnAProductos');
 btnInicio.addEventListener('click', function (event) {
     event.preventDefault();
     window.location.href = '../index.html';
-});
+}); */
 
 mostrar(carritoParseado);
 actualizarCostoTotal();

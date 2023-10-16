@@ -63,6 +63,16 @@ h3 span {
     font-style: italic;
 }
 
+button.material-symbols-outlined.btn-delete {
+    background-color: white;
+    color: black;
+    width: fit-content;
+}
+
+button.material-symbols-outlined.btn-delete:hover {
+    color: rgb(252, 64, 158);
+}
+
 /* Tablet 1280px */
 @media only screen and (min-width: 1280px) {}
 

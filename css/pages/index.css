@@ -17,35 +17,11 @@ img {
 }
 
 .card {
-    box-shadow: 2px 8px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgb(255, 255, 255);
-    margin: auto;
-    width: 300px;
     height: 420px;
-    text-align: center;
-    font-family: arial;
-    padding: 1rem;
-    border-radius: 1rem;
-}
-
-.price {
-    color: rgb(102, 102, 102);
-    font-size: 22px;
-    margin: 10px;
 }
 
 .card button {
-    display: inline-block;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    padding: 0.5rem;
-    color: white;
-    background-color: #312f2f;
-    text-align: center;
-    cursor: pointer;
     width: 80px;
-    margin: 5px 10px;
 }
 
 /* Tablet 1280px */

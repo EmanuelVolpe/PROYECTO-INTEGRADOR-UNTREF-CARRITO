@@ -10,7 +10,7 @@ const mostrar = function (data) {
     });
 };
 
-const template = function (id, producto, precio, imagen) {
+const template = (id, producto, precio, imagen) => {
     const card = generar('div', { className: 'card' });
     card.setAttribute('data-id', id);
     const image = generar('img', {
@@ -24,15 +24,21 @@ const template = function (id, producto, precio, imagen) {
         value: '1',
         min: '1',
         className: 'input-cantidad',
-        onchange: function (event) {
+        onchange: (event) => {
             const subtotal = calcularSubtotal(event, precio);
             actualizarSubtotal(card, subtotal);
+            actualizarCostoTotal();
+            actualizarCantidadProductos();
         }
     });
     quantity.type = 'number';
     const subt = parseInt(quantity.value) * parseInt(precio);
     const subtotal = generar('h4', { innerHTML: `Subtotal: $ ${subt.toFixed(2)}` });
-    const trash = generar('button', { innerHTML: 'delete', className: 'material-symbols-outlined', onclick: (event) => quitar(event, id) });
+    const trash = generar('button', {
+        innerHTML: 'delete',
+        className: 'material-symbols-outlined',
+        onclick: (event) => quitar(event, id)
+    });
     card.append(image, name, price, quantity, subtotal, trash);
     return card;
 };
@@ -61,24 +67,44 @@ const quitar = (event, id) => {
     carritoParseado.splice(indiceProductoAQuitar, 1);
     localStorage.setItem('carrito', JSON.stringify(carritoParseado));
     window.location.href = './cart.html';
-    /*if (!yaExiste) {
-        carritoParseado.push(producto);
-        localStorage.setItem('carrito', JSON.stringify(carritoParseado));
-        Swal.fire({
-            icon: 'success',
-            title: 'Genial!!!',
-            text: 'Producto eliminado del Carrito con éxito'
-        });
-    } else {
-        Swal.fire({
-            icon: 'info',
-            title: 'Oops...',
-            text: 'El producto ya se encuentra en el Carrito'
-        });
-    }*/
-    //console.log(JSON.parse(localStorage.getItem('carrito')));
 };
 
+const calcularSuma = (valores) => {
+    const total = valores.reduce((acumulador, valor) => {
+        return acumulador + valor;
+    }, 0);
+    return total;
+};
+
+const actualizarCostoTotal = () => {
+    const costoTotal = document.querySelector('#costoTotal');
+    const contenedorMain = document.querySelector('#main');
+    const cards = contenedorMain.querySelectorAll('.card');
+    const subtotales = [];
+    cards.forEach(card => {
+        const h4texto = card.childNodes[4].textContent;
+        const partes = h4texto.split(' ');
+        subtotales.push(parseInt(partes[2]));
+        return subtotales;
+    });
+    const total = calcularSuma(subtotales);
+    costoTotal.innerHTML = total;
+};
+
+const actualizarCantidadProductos = () => {
+    const cantDeProductos = document.querySelector('#cantProductos');
+    const contenedorMain = document.querySelector('#main');
+    const cards = contenedorMain.querySelectorAll('.card');
+    console.log(cards);
+    const cantidades = [];
+    cards.forEach(card => {
+        const inputsCant = card.childNodes[3].value;
+        cantidades.push(parseInt(inputsCant));
+        return cantidades;
+    });
+    const cantTotal = calcularSuma(cantidades);
+    cantDeProductos.innerHTML = cantTotal;
+};
 
 const btnInicio = document.querySelector('#btnAProductos');
 btnInicio.addEventListener('click', function (event) {
@@ -87,3 +113,5 @@ btnInicio.addEventListener('click', function (event) {
 });
 
 mostrar(carritoParseado);
+actualizarCostoTotal();
+actualizarCantidadProductos();

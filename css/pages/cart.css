@@ -73,6 +73,15 @@ button.material-symbols-outlined.btn-delete:hover {
     color: rgb(252, 64, 158);
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(252, 64, 158);
+}
+
 /* Tablet 1280px */
 @media only screen and (min-width: 1280px) {}
 

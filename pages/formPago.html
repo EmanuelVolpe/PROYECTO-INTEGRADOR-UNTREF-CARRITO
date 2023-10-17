@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pages/formPago.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
+    <script src="../js/formPago.js" type="module" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <h1> Formulario de Pago </h1>
+                <fieldset>
+                    <legend><span class="number">1</span> Datos</legend>
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="user_name">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="user_apellido">
+                </fieldset>
+                <fieldset>
+                    <legend><span class="number">2</span> Medio de Pago</legend>
+                    <select id="job" name="user_job">
+                        <option value="frontend_developer">Tarjeta de Crédito</option>
+                        <option value="php_developer">Tarjeta de Débito</option>
+                        <option value="python_developer">Transferencia Bancaria</option>
+                        <option value="rails_developer">Mercado Pago</option>
+                    </select>
+                </fieldset>
+                <button id="btnPagar">Pagar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

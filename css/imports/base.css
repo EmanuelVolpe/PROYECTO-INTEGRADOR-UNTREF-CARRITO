@@ -9,11 +9,12 @@
 }
 
 body {
-    background-image: linear-gradient(45deg, #7c9885, #b5b682);
+    /* background-image: var(--color-fondo); */
+    background-color: var(--color-fondo);
 }
 
 header {
-    background-color: #333;
+    background-color: var(--color-header);
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -37,7 +38,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: rgb(252, 64, 158);
+    color: var(--color-hover)
 }
 
 button {
@@ -47,7 +48,7 @@ button {
     outline: none;
     padding: 0.5rem;
     color: white;
-    background-color: #524f4f;
+    /* background-color: rgb(82, 79, 79); */
     text-align: center;
     cursor: pointer;
     width: 100px;
@@ -55,8 +56,8 @@ button {
 }
 
 .card {
-    box-shadow: 2px 8px 8px 0 rgba(0, 0, 0, 0.2);
-    background-color: rgb(255, 255, 255);
+    box-shadow: 6px 6px 8px 0 var(--color-header);
+    background-color: var(--color-card);
     margin: auto;
     width: 300px;
     height: auto;
@@ -64,10 +65,11 @@ button {
     font-family: arial;
     padding: 1rem;
     border-radius: 1rem;
+    transition: transform 0.3s;
 }
 
 .price {
-    color: rgb(102, 102, 102);
+    color: var(--color-price);
     font-size: 22px;
     margin: 10px;
 }
@@ -79,7 +81,7 @@ button {
     outline: none;
     padding: 0.5rem;
     color: white;
-    background-color: #312f2f;
+    background-color: var(--color-btn);
     text-align: center;
     cursor: pointer;
     width: 180px;
@@ -87,9 +89,14 @@ button {
 }
 
 .card button:hover {
-    color: rgb(252, 64, 158);
+    color: var(--color-hover);
 }
 
 .card .name {
     margin: 15px;
+}
+
+.card:hover {
+    transform: scale(1.04);
+    /* Escala la tarjeta al 110% del tamaño original */
 }

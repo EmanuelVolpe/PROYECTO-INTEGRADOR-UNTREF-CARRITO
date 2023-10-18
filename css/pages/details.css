@@ -1,13 +1,124 @@
 /* Mobile */
-img {
-    width: 225px;
-    height: 201px;
-    object-fit: cover;
-    margin-bottom: 20px;
+@media only screen and (max-width: 767px) {
+    img {
+        width: 225px;
+        height: 201px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
 }
 
-/* Tablet 1280px */
-@media only screen and (min-width: 1280px) {}
 
-/* Desktop 1366px */
-@media only screen and (min-width: 1366px) {}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #main {
+        padding: 10px 20px;
+    }
+
+    .card {
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas:
+            "name name name name"
+            "imagen descripcion descripcion precio"
+            "imagen descripcion descripcion boton";
+        gap: 10px;
+    }
+
+    img {
+        width: 225px;
+        height: 201px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        grid-area: imagen;
+        align-self: center;
+        /* Centra verticalmente */
+        justify-self: center;
+        /* Centra horizontalmente (opcional) */
+    }
+
+    .name {
+        grid-area: name;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .price {
+        grid-area: precio;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .descripcion {
+        grid-area: descripcion;
+        text-align: justify;
+        align-self: center;
+        justify-self: center;
+    }
+
+    button {
+        grid-area: boton;
+        align-self: center;
+        justify-self: center;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    #main {
+        padding: 10px 20px;
+    }
+
+    .card {
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 50px auto 50px;
+        grid-template-areas:
+            "name name name name"
+            "imagen descripcion descripcion precio"
+            "imagen descripcion descripcion boton";
+        gap: 10px;
+    }
+
+    img {
+        width: 225px;
+        height: 201px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        grid-area: imagen;
+        align-self: center;
+        /* Centra verticalmente */
+        justify-self: center;
+        /* Centra horizontalmente (opcional) */
+    }
+
+    .name {
+        grid-area: name;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .price {
+        grid-area: precio;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .descripcion {
+        grid-area: descripcion;
+        text-align: justify;
+        align-self: center;
+        justify-self: center;
+    }
+
+    button {
+        grid-area: boton;
+        align-self: center;
+        justify-self: center;
+    }
+}

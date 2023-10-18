@@ -43,6 +43,7 @@ const generar = function (etiqueta, propiedades) {
     return elemento;
 };
 
+/*Redirecciona a la pagina detalles del producto*/
 const verDetalles = (event) => {
     event.preventDefault();
     const item = event.target.parentElement;
@@ -59,5 +60,4 @@ traerDatos('./data/products.json')
         console.error('Error al obtener y mostrar los datos JSON:', error);
     });
 
-
-console.log(JSON.parse(localStorage.getItem('carrito')));
+//console.log(JSON.parse(localStorage.getItem('carrito')));

@@ -1,17 +1,6 @@
-/* Mobile */
-
-#main {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, auto);
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-}
-
 .card-resumen {
     margin-top: 15px;
-    background-color: rgb(202, 202, 202);
+    background-color: var(--color-card-resumen);
     padding-bottom: 15px;
     padding-top: 0px;
     padding: 0;
@@ -25,7 +14,7 @@
 .card-resumen .titulo {
     margin: 0 0 10px 0;
     padding: 5px;
-    background-color: rgb(10, 187, 143);
+    background-color: var(--color-header);
     color: white;
     font-size: 22px;
     text-align: center;
@@ -33,9 +22,10 @@
 }
 
 img {
-    width: 200px;
-    /*height: 250px;*/
+    width: 225px;
+    height: 201px;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .input-cantidad {
@@ -47,19 +37,18 @@ img {
 }
 
 .card .btn-compra {
-    background-color: rgb(10, 187, 143);
+    background-color: var(--color-header);
     font-size: 16px;
     margin-bottom: 20px;
     width: fit-content;
-    /* padding: auto; */
 }
 
 .card .btn-compra:hover {
-    color: rgb(252, 64, 158);
+    color: var(--color-hover);
 }
 
 h3 span {
-    color: rgb(252, 64, 158);
+    color: var(--color-hover);
     font-style: italic;
 }
 
@@ -70,7 +59,7 @@ button.material-symbols-outlined.btn-delete {
 }
 
 button.material-symbols-outlined.btn-delete:hover {
-    color: rgb(252, 64, 158);
+    color: var(--color-hover);
 }
 
 a {
@@ -79,11 +68,68 @@ a {
 }
 
 a:hover {
-    color: rgb(252, 64, 158);
+    color: var(--color-hover);
 }
 
-/* Tablet 1280px */
-@media only screen and (min-width: 1280px) {}
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    #main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
 
-/* Desktop 1366px */
-@media only screen and (min-width: 1366px) {}
+/* Tablet */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #contenedor {
+        padding: 10px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "main main resumen";
+        gap: 10px;
+        align-items: start;
+        align-content: start;
+    }
+
+    #main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+        grid-area: main;
+    }
+
+    .card.card-resumen {
+        grid-area: resumen;
+    }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+    #contenedor {
+        padding: 10px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "main main resumen";
+        gap: 10px;
+        align-items: start;
+        align-content: start;
+    }
+
+    #main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 10px;
+        grid-area: main;
+    }
+
+    .card.card-resumen {
+        grid-area: resumen;
+    }
+
+}

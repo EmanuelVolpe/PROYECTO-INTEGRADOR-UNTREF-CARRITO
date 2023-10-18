@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     /* eslint-disable no-undef */
 
+    // Verifica que no hay inputs vacios en el formulario de pago
     const verificarInputsVacios = () => {
         const entradas = document.querySelectorAll('input');
         let tieneCamposVacios = false;
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return tieneCamposVacios;
     };
 
+    // Reseta los inputs una vez enviado el formulario
     const resetearInputs = () => {
         const entradas = document.querySelectorAll('input');
         entradas.forEach(entrada => {
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
+    //envia el formulario y remueve el carrito del localStorage
     const btnPagar = document.querySelector('#btnPagar');
     btnPagar.addEventListener('click', (event) => {
         event.preventDefault();

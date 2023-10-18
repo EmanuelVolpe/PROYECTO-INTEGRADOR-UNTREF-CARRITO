@@ -1,1 +1,10 @@
-::root {}
+:root {
+    /* Colores */
+    --color-hover: rgb(252, 64, 158);
+    --color-fondo: rgb(100, 204, 197);
+    --color-btn: rgb(23, 107, 135);
+    --color-card-resumen: rgb(202, 202, 202);
+    --color-price: rgb(102, 102, 102);
+    --color-card: rgb(218, 255, 251);
+    --color-header: rgb(4, 54, 74);
+}

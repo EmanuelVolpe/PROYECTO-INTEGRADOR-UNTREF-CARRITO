@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts and Icons -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/pages/cart.css">
-    <script src="../js/cart.js" type="module" defer></script>
+    <!-- sweetalert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
+    <!-- Estilos Propios -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages/cart.css">
+    <!-- Javascript -->
+    <script src="../js/cart.js" type="module" defer></script>
     <title>Ecommerce Volpe - Cart</title>
 </head>
 
@@ -25,17 +29,19 @@
         </nav>
     </header>
 
-    <!--Acá se presentan las tarjetas de los productos del carrito-->
-    <main id="main">
-    </main>
+    <section id="contenedor">
+        <!--Acá se presentan las tarjetas de los productos del carrito-->
+        <main id="main">
+        </main>
 
-    <!--Card con el resumen de la compra-->
-    <div class="card card-resumen">
-        <h3 class="titulo">Resumen de Compra</h3>
-        <h3>Productos: <span id="cantProductos"></span></h3>
-        <h3>Costo Total: $ <span id="costoTotal"></span></h3>
-        <button class="btn-compra"><a href="./formPago.html">Finalizar Compra</a></button>
-    </div>
+        <!--Card con el resumen de la compra-->
+        <div class="card card-resumen">
+            <h3 class="titulo">Resumen de Compra</h3>
+            <h3>Productos: <span id="cantProductos"></span></h3>
+            <h3>Costo Total: $ <span id="costoTotal"></span></h3>
+            <button class="btn-compra"><a href="./formPago.html">Finalizar Compra</a></button>
+        </div>
+    </section>
 
     <!--     <button id="btnAProductos">Ver Productos</button> -->
 </body>

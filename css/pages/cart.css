@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.card-resumen:hover {
+    transform: none;
+}
+
 .card-resumen h3 {
     text-align: left;
     margin: 0 20px 10px 20px;
@@ -26,6 +30,8 @@ img {
     height: 201px;
     object-fit: cover;
     margin-bottom: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 1rem;
 }
 
 .input-cantidad {

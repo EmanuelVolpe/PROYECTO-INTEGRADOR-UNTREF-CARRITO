@@ -30,7 +30,7 @@ img {
     height: 201px;
     object-fit: cover;
     margin-bottom: 20px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     border-radius: 1rem;
 }
 
@@ -59,7 +59,7 @@ h3 span {
 }
 
 button.material-symbols-outlined.btn-delete {
-    background-color: white;
+    background-color: var(--color-card);
     color: black;
     width: fit-content;
 }

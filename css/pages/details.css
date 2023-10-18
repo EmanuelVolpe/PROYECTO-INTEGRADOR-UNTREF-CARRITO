@@ -1,3 +1,7 @@
+.card:hover {
+    transform: none;
+}
+
 /* Mobile */
 @media only screen and (max-width: 767px) {
     img {
@@ -91,7 +95,7 @@
         object-fit: cover;
         margin-bottom: 20px;
         grid-area: imagen;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         border-radius: 1rem;
         align-self: center;
         /* Centra verticalmente */

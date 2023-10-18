@@ -19,17 +19,17 @@
                 <fieldset>
                     <legend><span class="number">1</span> Datos</legend>
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="user_name">
+                    <input type="text" id="name" name="user_name" required>
                     <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="user_apellido">
+                    <input type="text" id="apellido" name="user_apellido" required>
                 </fieldset>
                 <fieldset>
                     <legend><span class="number">2</span> Medio de Pago</legend>
-                    <select id="job" name="user_job">
-                        <option value="frontend_developer">Tarjeta de Crédito</option>
-                        <option value="php_developer">Tarjeta de Débito</option>
-                        <option value="python_developer">Transferencia Bancaria</option>
-                        <option value="rails_developer">Mercado Pago</option>
+                    <select name="formaDePago" required>
+                        <option value="Tarjeta_de_Credito">Tarjeta de Crédito</option>
+                        <option value="Tarjeta_de_Debito">Tarjeta de Débito</option>
+                        <option value="Transferencia_Bancaria">Transferencia Bancaria</option>
+                        <option value="Mercado_Pago">Mercado Pago</option>
                     </select>
                 </fieldset>
                 <button id="btnPagar">Pagar</button>

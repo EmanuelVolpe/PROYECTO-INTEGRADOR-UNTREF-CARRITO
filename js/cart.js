@@ -1,6 +1,7 @@
 import { generar } from './details.js';
 
 let carritoParseado = JSON.parse(localStorage.getItem('carrito'));
+let inputsCantidades = JSON.parse(localStorage.getItem('inputsCantidades')) || [];
 
 const mostrar = function (data) {
     const main = document.querySelector('#main');
@@ -20,7 +21,7 @@ const template = (id, producto, precio, imagen) => {
     const name = generar('h3', { innerHTML: producto, className: 'name' });
     const price = generar('p', { innerHTML: `$ ${parseFloat(precio).toFixed(2)}`, className: 'price' });
     const quantity = generar('input', {
-        name: `cantidad-${id}`,
+        name: `producto-${id}`,
         value: '1',
         min: '1',
         className: 'input-cantidad',
@@ -103,11 +104,24 @@ const actualizarCantidadProductos = () => {
     cantDeProductos.innerHTML = cantTotal;
 };
 
-/* const btnInicio = document.querySelector('#btnAProductos');
-btnInicio.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.location.href = '../index.html';
-}); */
+// Almacenar en el localStorage
+const inputElements = document.querySelectorAll('input[type="number"]');
+inputElements.forEach((input) => {
+    input.addEventListener('change', (event) => {
+        const productName = input.getAttribute('name');
+        const units = event.target.value;
+        inputsCantidades.push({ productName, units });
+        console.log(inputsCantidades);
+        localStorage.setItem('inputsCantidades', JSON.stringify(inputsCantidades));
+    });
+});
+
+try {
+    console.log(inputElements);
+} catch (error) {
+    console.log(error);
+}
+console.log(inputElements);
 
 mostrar(carritoParseado);
 actualizarCostoTotal();

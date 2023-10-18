@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const idProductoSeleccionado = parseInt(location.search.split('=', 2)[1]);
 const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
@@ -53,7 +54,6 @@ const template = (id, producto, descripcion, precio, imagen) => {
     card.append(image, name, description, price, btnComprar);
     return card;
 };
-
 
 /*Agrega el producto al arreglo Carrito*/
 const agregarAlCarrito = (event, producto) => {

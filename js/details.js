@@ -24,14 +24,13 @@ const productoBuscado = (productos, idProductoSeleccionado) => {
     return elem;
 };
 
-/* */
+
 const mostrar = function (id, producto, descripcion, precio, imagen) {
     const main = document.querySelector('#main');
     const product = template(id, producto, descripcion, precio, imagen);
     main.appendChild(product);
 };
 
-/* Genera dinamicamente un tipo de elemento HTML en funcion de la etiqueta y las propiedades */
 const generar = (etiqueta, propiedades) => {
     const elemento = document.createElement(etiqueta);
     Object.keys(propiedades).forEach(
@@ -55,7 +54,6 @@ const template = (id, producto, descripcion, precio, imagen) => {
     return card;
 };
 
-/*Agrega el producto al arreglo Carrito*/
 const agregarAlCarrito = (event, producto) => {
     event.preventDefault();
     const yaExiste = carrito.some(element => {
@@ -76,7 +74,6 @@ const agregarAlCarrito = (event, producto) => {
             text: 'El producto ya se encuentra en el Carrito'
         });
     }
-    console.log(JSON.parse(localStorage.getItem('carrito')));
 };
 
 function crearBotonAgregar(producto) {

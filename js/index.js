@@ -11,7 +11,6 @@ async function traerDatos(miArchivo) {
     }
 }
 
-/* Agrega cada elemento li a la ul del DOM */
 const mostrar = function (datos) {
     const main = document.querySelector('#main');
     datos.forEach(({ id, producto, precio, imagen }) => {
@@ -34,7 +33,7 @@ const template = function (id, producto, precio, imagen) {
     return card;
 };
 
-/* Genera dinamicamente un tipo de elemento HTML en funcion de la etiqueta y las propiedades */
+
 const generar = function (etiqueta, propiedades) {
     const elemento = document.createElement(etiqueta);
     Object.keys(propiedades).forEach(
@@ -43,7 +42,7 @@ const generar = function (etiqueta, propiedades) {
     return elemento;
 };
 
-/*Redirecciona a la pagina detalles del producto*/
+
 const verDetalles = (event) => {
     event.preventDefault();
     const item = event.target.parentElement;

@@ -1,7 +1,6 @@
 import { generar } from './details.js';
 
 let carritoParseado = JSON.parse(localStorage.getItem('carrito'));
-let inputsCantidades = JSON.parse(localStorage.getItem('inputsCantidades')) || [];
 
 const mostrar = function (data) {
     const main = document.querySelector('#main');
@@ -103,25 +102,6 @@ const actualizarCantidadProductos = () => {
     const cantTotal = calcularSuma(cantidades);
     cantDeProductos.innerHTML = cantTotal;
 };
-
-// Almacenar en el localStorage
-const inputElements = document.querySelectorAll('input[type="number"]');
-inputElements.forEach((input) => {
-    input.addEventListener('change', (event) => {
-        const productName = input.getAttribute('name');
-        const units = event.target.value;
-        inputsCantidades.push({ productName, units });
-        console.log(inputsCantidades);
-        localStorage.setItem('inputsCantidades', JSON.stringify(inputsCantidades));
-    });
-});
-
-try {
-    console.log(inputElements);
-} catch (error) {
-    console.log(error);
-}
-console.log(inputElements);
 
 mostrar(carritoParseado);
 actualizarCostoTotal();
